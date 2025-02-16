@@ -1,0 +1,15 @@
+{
+  "articles": [
+    {
+      "id": "ai-bberwocky",
+      "title": "The AI-bberwocky",
+      "date": "2024-01-15",
+      "tags": [
+        "poetry",
+        "ai",
+        "tech"
+      ],
+      "content": "# The AI-bberwocky<br /><br />\n'Twas brillig in the Silicon Vale,  \nDid gyre and prompt the AI-loops'll,  \nAll mimsy were the neural scales,  \nAnd the deep nets did crawl.<br /><br />\"Beware the Copilot, my son!  \nThe suggestions that bite, the completions that catch!  \nBeware the ChatGPT, and shun  \nThe verbose StackOverflow dispatch!\"<br /><br />He took his keyboard bold in hand,  \nLong time the syntax foe he sought  \nSo rested he by the Git-Git tree  \nAnd stood awhile in thought.<br /><br />And as in tech-deep thought he stood,  \nThe Copilot, with eyes of flame,  \nCame whiffling through the coding wood,  \nAnd refactored as it came!<br /><br />One-two! One-two! And through and through  \nThe virtual blade went snicker-snack!  \nIt left bugs dead, and with their head,  \nIt went galumphing back.<br /><br />\"And hast thou slain the legacy code?  \nCome to my arms, my beamish boy!  \nO frabjous day! Callooh! Callay!\"  \nHe chortled in his joy.<br /><br />'Twas brillig in the Silicon Vale,  \nDid gyre and prompt the AI-loops'll,  \nAll mimsy were the neural scales,  \nAnd the deep nets did crawl."
+    }
+  ]
+}

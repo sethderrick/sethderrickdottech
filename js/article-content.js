@@ -1,67 +1,39 @@
-const articleContent = `
-  <h1>The AI-bberwocky</h1>
-  <br />
+import { marked } from "marked";
 
-  <div class="stanza">
-    <p>'Twas brillig in the Silicon Vale,</p>
-    <p>Did gyre and prompt the AI-loops'll,</p>
-    <p>All mimsy were the neural scales,</p>
-    <p>And the deep nets did crawl.</p>
-  </div>
+// Configure marked
+marked.use({
+  gfm: true,
+  breaks: true,
+});
 
-  <br />
+const cache = new Map();
 
-  <div class="stanza">
-    <p>"Beware the Copilot, my son!</p>
-    <p>The suggestions that bite, the completions that catch!</p>
-    <p>Beware the ChatGPT, and shun</p>
-    <p>The verbose StackOverflow dispatch!"</p>
-  </div>
+async function fetchArticle(id) {
+  console.log("Fetching article:", id);
+  if (cache.has(id)) {
+    console.log("Returning from cache");
+    return cache.get(id);
+  }
 
-  <br />
+  try {
+    const response = await fetch("/js/content-store/musings.json");
+    const data = await response.json();
+    console.log("Fetched data:", data);
 
-  <div class="stanza">
-    <p>He took his keyboard bold in hand,</p>
-    <p>Long time the syntax foe he sought</p>
-    <p>So rested he by the Git-Git tree</p>
-    <p>And stood awhile in thought.</p>
-  </div>
+    const article = data.articles.find((a) => a.id === id);
+    console.log("Found article:", article);
 
-  <br />
+    if (!article) throw new Error("Article not found");
 
-  <div class="stanza">
-    <p>And as in tech-deep thought he stood,</p>
-    <p>The Copilot, with eyes of flame,</p>
-    <p>Came whiffling through the coding wood,</p>
-    <p>And refactored as it came!</p>
-  </div>
+    const htmlContent = marked(article.content);
+    console.log("Converted HTML:", htmlContent);
 
-  <br />
+    cache.set(id, htmlContent);
+    return htmlContent;
+  } catch (error) {
+    console.error("Failed to fetch article:", error);
+    return "<p>Article temporarily unavailable</p>";
+  }
+}
 
-  <div class="stanza">
-    <p>One-two! One-two! And through and through</p>
-    <p>The virtual blade went snicker-snack!</p>
-    <p>It left bugs dead, and with their head,</p>
-    <p>It went galumphing back.</p>
-  </div>
-
-  <br />
-
-  <div class="stanza">
-    <p>"And hast thou slain the legacy code?</p>
-    <p>Come to my arms, my beamish boy!</p>
-    <p>O frabjous day! Callooh! Callay!"</p>
-    <p>He chortled in his joy.</p>
-  </div>
-
-  <br />
-
-  <div class="stanza">
-    <p>'Twas brillig in the Silicon Vale,</p>
-    <p>Did gyre and prompt the AI-loops'll,</p>
-    <p>All mimsy were the neural scales,</p>
-    <p>And the deep nets did crawl.</p>
-  </div>
-`;
-
-export default articleContent;
+export { fetchArticle };
