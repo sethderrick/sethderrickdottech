@@ -1,0 +1,20 @@
+.stanza {
+  margin: 2em 0;
+  white-space: pre-line;
+}
+
+.stanza p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+article {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}

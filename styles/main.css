@@ -1,0 +1,77 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Easy to change theme colors */
+  --bg-color: #0f0f0f;
+  --text-color: #f0f0f0;
+  --link-color: #8a8a8a;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#display-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 35px);
+  z-index: 1;
+}
+
+#musings {
+    width: 450px;
+    max-height: 750px;
+    position: fixed;
+    left: 100px;  
+    top: 100px;
+    bottom: 35px;
+    padding: 2rem;
+    line-height: 1.6;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+    z-index: 2;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  z-index: 3;
+  background: var(--bg-color);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--text-color);
+}
