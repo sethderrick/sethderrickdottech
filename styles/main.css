@@ -39,8 +39,8 @@ main {
   width: 450px;
   max-height: 750px;
   position: fixed;
-  left: 100px;
-  top: 100px;
+  left: 25px;
+  top: 25px;
   bottom: 35px;
   padding: 2rem;
   line-height: 1.6;
